@@ -1,5 +1,12 @@
 public class Main {
+
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+
+        Rect rect = new Rect();
+        rect.height = 10;
+        rect.width = 15;
+        rect.rect = new Rect();
+
+        System.out.println(rect.width * rect.height);
     }
 }
