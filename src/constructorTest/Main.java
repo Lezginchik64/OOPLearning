@@ -6,8 +6,9 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         Person person = new Person("Vadim", 21, "Kuznecova 7", "89063154641");
-        Fraction fraction = new Fraction(1,20);
-
+        Fraction fraction = new Fraction(1, 20);
+        Persons oleg=new Persons("Konin","Dog");
+        System.out.println(oleg);
     }
 }
 
@@ -49,5 +50,38 @@ class Fraction {
         }
         this.numerator = numerator;
         this.denominator = denominator;
+    }
+}
+
+class Persons {
+    private String lastName;
+    private String firstName;
+    private char gender;  // m - male, f - female
+
+    public Persons() {
+        this("", "", '-');
+    }
+
+    public Persons(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    public Persons(String firstName, String lastName, char gender) {
+        this(lastName, firstName);
+        this.gender = gender;
+    }
+    public Persons(String lastName){
+        this(lastName, "", '-');
+    }
+
+
+    @Override
+    public String toString() {
+        return "Persons{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", gender=" + gender +
+                '}';
     }
 }
